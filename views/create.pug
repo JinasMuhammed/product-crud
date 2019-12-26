@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+      title='Product CRUD'
+      link(href="https://bootswatch.com/3/paper/bootstrap.min.css",type="text/css",rel="stylesheet")
+      meta(name="viewport",content="width=device-width,initial-scale=-1")
+      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+      script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js")
+  body
+      nav.navbar.navbar-inverse
+        .container
+          .navbar-header
+            a(class="navbar-brand",href="/") ProductCRUD
+            button(class="navbar-toggle",data-target="#myNavbar",data-toggle="collapse")
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+          div(class="collapse navbar-collapse", id="myNavbar")
+            ul.navbar-nav.nav
+              li
+                a(href="/") Products
+              li
+                a(href="/create") Create Product
+        
+      .container
+        .row
+          .col-md-12.jumbotron
+            h1.text-center="Create Product"
+        .row
+          .col-md-6.col-md-offset-3.well
+            form(action="/add",method="post",autocomplete="off")
+              .form-group
+                label="Title"
+                input(type="text",name="title",class="form-control",placeholder="Enter Name",required)
+              .form-group
+                label="Image Url"
+                input(type="url",name="image",class="form-control",placeholder="Enter URL",required)
+              .form-group
+                label="Price"
+                input(type="number",name="price",class="form-control",placeholder="Enter Price",required)
+              .form-group
+                label="GST"
+                input(type="number",name="gst",class="form-control",placeholder="Enter Gst",required)
+              .form-group
+                label="Description"
+                input(type="text",name="description",class="form-control",placeholder="Enter Description",required)
+              .form-group
+                input(type="submit",class="btn btn-primary",value="Create Product")
+              
